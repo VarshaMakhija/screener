@@ -1,14 +1,9 @@
-jobs:
-- name: hello-world-job
-  plan:
-  - task: hello-world-task
-    config:
-      platform: linux
-      image_resource:
-        type: registry-image
-        source:
-          repository: busybox # images are pulled from docker hub by default
-          tag: latest
-      run:
-        path: echo
-        args: ["Hello world!"]
+platform: linux
+image_resource:
+  type: registry-image
+  source:
+    repository: busybox # images are pulled from docker hub by default
+    tag: latest
+run:
+  path: echo
+  args: ["Hello world!"]
